@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+
+  </head>
+
+  <body>
+    <div id="dudu"></div>
+
+    <script type="text/babel">
+      var Clock = React.createClass({
+
+        getInitialState() {
+          return {
+            date: new Date()
+          }
+        },
+
+        componentDidMount: function() {
+          var _this = this
+          this.timerID = setInterval(
+            function() {
+              return _this.setState(
+              {date: new Date()}
+              );
+            },
+            1000
+          )
+        },
+
+        componentWillUnmount() {
+          clearInterval(this.timerID);
+        },
+
+        tick() {
+          this.setState({
+            date: new Date()
+          });
+        },
+        
+        render: function() {
+          return (
+            <div>
+              <h1>Hello Dude!</h1>
+              <h2>Time says: {this.state.date.toString()} </h2>
+            </div>
+          );
+        }
+      })
+
+      ReactDOM.render(
+        <Clock/>,
+        document.getElementById('dudu')
+      );
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </body>
+
+</html>

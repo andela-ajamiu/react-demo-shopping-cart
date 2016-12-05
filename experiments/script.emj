@@ -1,0 +1,31 @@
+// var Dude = React.createClass({
+//     render: function() {
+//         return (
+//             <h2>Hello from the other side</h2>
+//         )
+//     }
+// })
+
+// ReactDOM.render(<Dude/>, document.getElementById('awee'));
+
+
+// Code goes here
+
+// var Dude = React.createClass({
+//     render: function() {
+//         return (
+//             <h2>Hello from the other side</h2>
+//         )
+//     }
+// })
+
+// ReactDOM.render(<h1>Hello, world from another!</h1>, document.getElementById('awee'));
+
+  ReactDOM.render(
+    <div>
+    <h1> I am an Element </h1>
+    <h1> I am another Element </h1>
+    </div>
+    // React.createElement('div', {}, React.createElement('h1', {}, 'I am an Element'), React.createElement('h1', {}, 'I am another Element'))
+    ,document.getElementById('awee')
+  );
